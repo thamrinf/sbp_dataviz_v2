@@ -38,12 +38,5 @@
     "onchange": "^6.0.0",
     "uglify-es": "^3.3.9"
   },
-  {
-    "browserify-css": {
-        "autoInject": true,
-        "minify": true,
-        "rootDir": "."
-    }
-   },
   "devDependencies": {}
 }
