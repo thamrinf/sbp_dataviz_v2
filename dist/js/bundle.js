@@ -561,7 +561,7 @@ $( document ).ready(function() {
     //var partnerData = getDataByIndicator('Partner/Organisation');
     var funderData = getDataByIndicator('Funded By');
 
-    var barchartPositionTitle = 'Deployments by Position',
+    var barchartPositionTitle = 'Deployments by Function',
         barchartOrgTitle = 'Deployments by Partner Organization',
         barchartFunderTitle = 'Deployments by Funder';
 
