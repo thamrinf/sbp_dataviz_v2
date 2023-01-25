@@ -510,7 +510,7 @@ $( document ).ready(function() {
 
 
       dataByRoster = d3.nest()
-        .key(function(d){ return d['Partner/Organisation']; })
+        .key(function(d){ return d['Nationality']; })
         .rollup(function(d) { return d.length; })
         .entries(sbpFilteredData).sort(sort_value);
 
@@ -561,7 +561,7 @@ $( document ).ready(function() {
     //var partnerData = getDataByIndicator('Partner/Organisation');
     var funderData = getDataByIndicator('Funded By');
 
-    var barchartPositionTitle = 'Deployments by Position',
+    var barchartPositionTitle = 'Deployments by Profile',
         barchartOrgTitle = 'Deployments by Partner Organization',
         barchartFunderTitle = 'Deployments by Funder';
 
@@ -712,7 +712,7 @@ $( document ).ready(function() {
 var partialDataYears = ["2018", "2021"];
 function noteOnYear () {
   if (partialDataYears.includes(yearFilter)) {
-    $('header h1 span').text("(Incomplete data)");
+    $('header h1 span').text("");
   } else {
     $('header h1 span').text("");
   }
