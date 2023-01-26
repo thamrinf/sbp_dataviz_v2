@@ -2,7 +2,7 @@
 var dimension, group, 
 	leftBarChart;
 // var mapColorRange = ['#C7EFEC', '#71D7CF', '#1EBFB3'];
-var mapColorRange = ['#FCDFD3', '#FACEBD', '#F9BFA7', '#F7AE91', '#F59E7B'];
+var mapColorRange = ['#C7EEEB', '#8FDFD9', '#1EBFB3', '#168F86', '#0B4742'];
 
 function drawRankingChart(data) {
 	var margin = {top: 30, right: 40, bottom: 0, left: 14};
@@ -120,7 +120,7 @@ var donutLang, donutGender, donutLevel, donutStatus;
 var colorArray = {
 	pieLang: ['#FF9D4D','#FEAC68','#FEBA83','#FDC99D','#FDD7B8','#FCE6D3'],
 	pieGender: ['#9C27B0','#BD70CB','#DEB8E5'],
-	pieLevel: ['#1D7353', '#28A02C','#5EB861', '#6FBF8B','#79C47B','#AFDBB0','#CAE7CA'],
+	pieLevel: ['#28A02C','#43AC46','#5EB861','#79C47B','#94CF95','#AFDBB0','#CAE7CA'],
 	pieStatus: ['#1EBFB3', '#C7EFEC'],
 };
 
@@ -320,24 +320,24 @@ function choroplethMap() {
         });
     });
 
-//    var legend = d3.legendColor()
-//      .labelFormat(d3.format(',.0f'))
-//      .title(legendTitle)
-//      .cells(mapColorRange.length)
-//      .scale(mapScale);
-//
-//
-//    d3.select('#legend').remove();
-//
-//    var div = d3.select('#map');
-//    var svg = div.append('svg')
-//    	.attr('id', 'legend')
-//      	.attr('height', '115px');
-//      	//.attr("transform", "translate(5, -80)");
-//    
-//    svg.append('g')
-//      .attr('class', 'scale')
-//      .call(legend);
+    var legend = d3.legendColor()
+      .labelFormat(d3.format(',.0f'))
+      .title(legendTitle)
+      .cells(mapColorRange.length)
+      .scale(mapScale);
+
+
+    d3.select('#legend').remove();
+
+    var div = d3.select('#map');
+    var svg = div.append('svg')
+    	.attr('id', 'legend')
+      	.attr('height', '115px');
+      	//.attr("transform", "translate(5, -80)");
+    
+    svg.append('g')
+      .attr('class', 'scale')
+      .call(legend);
 
 } //choroplethMap
 
@@ -510,7 +510,7 @@ $( document ).ready(function() {
 
 
       dataByRoster = d3.nest()
-        .key(function(d){ return d['Nationality']; })
+        .key(function(d){ return d['Partner/Organisation']; })
         .rollup(function(d) { return d.length; })
         .entries(sbpFilteredData).sort(sort_value);
 
@@ -561,7 +561,7 @@ $( document ).ready(function() {
     //var partnerData = getDataByIndicator('Partner/Organisation');
     var funderData = getDataByIndicator('Funded By');
 
-    var barchartPositionTitle = 'Deployments by Profile',
+    var barchartPositionTitle = 'Deployments by Position',
         barchartOrgTitle = 'Deployments by Partner Organization',
         barchartFunderTitle = 'Deployments by Funder';
 
@@ -712,7 +712,7 @@ $( document ).ready(function() {
 var partialDataYears = ["2018", "2021"];
 function noteOnYear () {
   if (partialDataYears.includes(yearFilter)) {
-    $('header h1 span').text("");
+    $('header h1 span').text("(Incomplete data)");
   } else {
     $('header h1 span').text("");
   }
