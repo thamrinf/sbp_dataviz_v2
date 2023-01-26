@@ -2,7 +2,7 @@
 var dimension, group, 
 	leftBarChart;
 // var mapColorRange = ['#C7EFEC', '#71D7CF', '#1EBFB3'];
-var mapColorRange = ['#C7EEEB', '#8FDFD9', '#1EBFB3', '#168F86', '#0B4742'];
+var mapColorRange = ['#FCDFD3', '#FACEBD', '#F9BFA7', '#F7AE91', '#F59E7B'];
 
 function drawRankingChart(data) {
 	var margin = {top: 30, right: 40, bottom: 0, left: 14};
@@ -120,7 +120,7 @@ var donutLang, donutGender, donutLevel, donutStatus;
 var colorArray = {
 	pieLang: ['#FF9D4D','#FEAC68','#FEBA83','#FDC99D','#FDD7B8','#FCE6D3'],
 	pieGender: ['#9C27B0','#BD70CB','#DEB8E5'],
-	pieLevel: ['#28A02C','#43AC46','#5EB861','#79C47B','#94CF95','#AFDBB0','#CAE7CA'],
+	pieLevel: ['#2d6a4f', '#40916c','#52b788','#74c69d','#95d5b2','#b7e4c7','#d8f3dc'],
 	pieStatus: ['#1EBFB3', '#C7EFEC'],
 };
 
@@ -320,24 +320,24 @@ function choroplethMap() {
         });
     });
 
-    var legend = d3.legendColor()
-      .labelFormat(d3.format(',.0f'))
-      .title(legendTitle)
-      .cells(mapColorRange.length)
-      .scale(mapScale);
-
-
-    d3.select('#legend').remove();
-
-    var div = d3.select('#map');
-    var svg = div.append('svg')
-    	.attr('id', 'legend')
-      	.attr('height', '115px');
-      	//.attr("transform", "translate(5, -80)");
-    
-    svg.append('g')
-      .attr('class', 'scale')
-      .call(legend);
+//    var legend = d3.legendColor()
+//      .labelFormat(d3.format(',.0f'))
+//      .title(legendTitle)
+//      .cells(mapColorRange.length)
+//      .scale(mapScale);
+//
+//
+//    d3.select('#legend').remove();
+//
+//    var div = d3.select('#map');
+//    var svg = div.append('svg')
+//    	.attr('id', 'legend')
+//      	.attr('height', '115px');
+//      	//.attr("transform", "translate(5, -80)");
+//    
+//    svg.append('g')
+//      .attr('class', 'scale')
+//      .call(legend);
 
 } //choroplethMap
 
@@ -561,7 +561,7 @@ $( document ).ready(function() {
     //var partnerData = getDataByIndicator('Partner/Organisation');
     var funderData = getDataByIndicator('Funded By');
 
-    var barchartPositionTitle = 'Deployments by Position',
+    var barchartPositionTitle = 'Deployments by Profile',
         barchartOrgTitle = 'Deployments by Partner Organization',
         barchartFunderTitle = 'Deployments by Funder';
 
@@ -712,7 +712,7 @@ $( document ).ready(function() {
 var partialDataYears = ["2018", "2021"];
 function noteOnYear () {
   if (partialDataYears.includes(yearFilter)) {
-    $('header h1 span').text("(Incomplete data)");
+    $('header h1 span').text("");
   } else {
     $('header h1 span').text("");
   }
