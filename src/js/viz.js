@@ -114,7 +114,7 @@ $( document ).ready(function() {
 
     var barchartPositionTitle = 'Deployments by Position',
         barchartOrgTitle = 'Deployments by Partner Organization',
-        barchartFunderTitle = 'Deployments by Funder';
+        barchartFunderTitle = 'Deployments by Nationality';
 
     $('#barcharts').append('<div class="barchart col-6"><div><h3 class="header">'+barchartPositionTitle+'</h3><div id="barchartPosition"></div></div>');
     // $('#barcharts').append('<div class="barchart col-6"><div><h3 class="header">'+barchartOrgTitle+'</h3><div id="barchartOrg"></div></div>');
@@ -263,7 +263,7 @@ $( document ).ready(function() {
 var partialDataYears = ["2018", "2021"];
 function noteOnYear () {
   if (partialDataYears.includes(yearFilter)) {
-    $('header h1 span').text("(Incomplete data)");
+    $('header h1 span').text("");
   } else {
     $('header h1 span').text("");
   }
