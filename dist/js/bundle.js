@@ -2,7 +2,7 @@
 var dimension, group, 
 	leftBarChart;
 // var mapColorRange = ['#C7EFEC', '#71D7CF', '#1EBFB3'];
-var mapColorRange = ['#C7EEEB', '#8FDFD9', '#1EBFB3', '#168F86', '#0B4742'];
+var mapColorRange = ['#FFBB8E’, ‘#FFAD6E’, ‘#FF9949’, ‘#FF8823’, ‘#FF7600'];
 
 function drawRankingChart(data) {
 	var margin = {top: 30, right: 40, bottom: 0, left: 14};
