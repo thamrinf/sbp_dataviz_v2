@@ -20,7 +20,7 @@ let countries = [],
     dutyStations = [];
 
 
-let mapCountryColor = '#FFBB8E';//'#FFAD6E';//'#FF9949';//'#FF8823';//'#FF7600';//'#fec44f';
+let mapCountryColor = '#FFBB8E';'#FFAD6E';'#FF9949';'#FF8823';'#FF7600';
 
 let zoom, g, mapsvg, markerScale;
 
@@ -257,7 +257,6 @@ $( document ).ready(function() {
     setTimeout(function() {
       // viewportHeight = $('.panel').height();
       drawMap();
-      // createMapLegend();
     }, 100);
   }
 var partialDataYears = ["2018", "2021"];
