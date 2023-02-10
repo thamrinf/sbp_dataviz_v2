@@ -163,7 +163,7 @@ var barchartTicks = {
 	          };
 
 function generateBarChart(data, bind) {
-	var hauteur = (data[0].length > 5) ? 700 : 250;
+	var hauteur = (data[0].length > 5) ? 900 : 250;
 	var funderTicks = {
 			    outer: false,
 	          	multiline: true,
@@ -259,9 +259,9 @@ function updateViz(filter) {
 
 	var positionData = getDataByIndicator('Functional');
 	// var partnerData = getDataByIndicator('Partner/Organisation');
-	var funderData = getDataByIndicator('Funded By');
-
-	var hauteur = (funderData[0].length-1 > 5) ? 700 : 250;
+	var funderData = getDataByIndicator('Nationality');
+	
+	var hauteur = (funderData[0].length-1 > 5) ? 900: 250;
 
 	if(positionData[0].length==2 && positionData[0][1]==""){
 		$('#nochart').remove();
@@ -433,8 +433,10 @@ function getDataByIndicator(indicator) {
         .entries(sbpFilteredData).sort(sort_value);
 
     dataByInd.forEach( function(element, index) {
-        dataX.push(element.key);
-        dataY.push(element.value);
+        if(element.key != "n/a"){
+            dataX.push(element.key);
+            dataY.push(element.value);
+        }
     });
     
     dataY.unshift('value');
@@ -494,7 +496,7 @@ $( document ).ready(function() {
       sbpData = sbp.filter(function(d){ 
         return (d['Deployment Year Started']==yearFilter && d['Met/Unmet']=='Met'); 
       });
-      console.log(sbpData);
+      // console.log(sbpData);
       sbpFilteredData = sbpData;
 
       sbpFilteredData.forEach( function(element, index) {
@@ -555,11 +557,11 @@ $( document ).ready(function() {
     donutLevel = generatePieChart(levelData, 'pieLevel');
     // donutStatus = generatePieChart(statusData, 'pieStatus');
 
-    // bar charts
+    // bar chart
 
     var positionData = getDataByIndicator('Functional');
     //var partnerData = getDataByIndicator('Partner/Organisation');
-    var funderData = getDataByIndicator('Funded By');
+    var funderData = getDataByIndicator('Nationality');
 
     var barchartPositionTitle = 'Deployments by Position',
         barchartOrgTitle = 'Deployments by Partner Organization',

@@ -89,8 +89,10 @@ function getDataByIndicator(indicator) {
         .entries(sbpFilteredData).sort(sort_value);
 
     dataByInd.forEach( function(element, index) {
-        dataX.push(element.key);
-        dataY.push(element.value);
+        if(element.key != "n/a"){
+            dataX.push(element.key);
+            dataY.push(element.value);
+        }
     });
     
     dataY.unshift('value');

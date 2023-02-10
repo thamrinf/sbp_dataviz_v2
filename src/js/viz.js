@@ -45,7 +45,7 @@ $( document ).ready(function() {
       sbpData = sbp.filter(function(d){ 
         return (d['Deployment Year Started']==yearFilter && d['Met/Unmet']=='Met'); 
       });
-      console.log(sbpData);
+      // console.log(sbpData);
       sbpFilteredData = sbpData;
 
       sbpFilteredData.forEach( function(element, index) {
@@ -106,11 +106,11 @@ $( document ).ready(function() {
     donutLevel = generatePieChart(levelData, 'pieLevel');
     // donutStatus = generatePieChart(statusData, 'pieStatus');
 
-    // bar charts
+    // bar chart
 
     var positionData = getDataByIndicator('Functional');
     //var partnerData = getDataByIndicator('Partner/Organisation');
-    var funderData = getDataByIndicator('Funded By');
+    var funderData = getDataByIndicator('Nationality');
 
     var barchartPositionTitle = 'Deployments by Position',
         barchartOrgTitle = 'Deployments by Partner Organization',

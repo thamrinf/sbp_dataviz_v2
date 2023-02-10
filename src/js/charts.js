@@ -162,7 +162,7 @@ var barchartTicks = {
 	          };
 
 function generateBarChart(data, bind) {
-	var hauteur = (data[0].length > 5) ? 700 : 250;
+	var hauteur = (data[0].length > 5) ? 900 : 250;
 	var funderTicks = {
 			    outer: false,
 	          	multiline: true,
@@ -258,9 +258,9 @@ function updateViz(filter) {
 
 	var positionData = getDataByIndicator('Functional');
 	// var partnerData = getDataByIndicator('Partner/Organisation');
-	var funderData = getDataByIndicator('Funded By');
-
-	var hauteur = (funderData[0].length-1 > 5) ? 700 : 250;
+	var funderData = getDataByIndicator('Nationality');
+	
+	var hauteur = (funderData[0].length-1 > 5) ? 900: 250;
 
 	if(positionData[0].length==2 && positionData[0][1]==""){
 		$('#nochart').remove();
