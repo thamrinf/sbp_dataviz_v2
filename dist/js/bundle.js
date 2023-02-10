@@ -471,7 +471,7 @@ let countries = [],
     dutyStations = [];
 
 
-let mapCountryColor = '#1EBFB3';//'#71D7CF';//'#C7EFEC';//'#1EBFB3';//'#009EDB';//'#fec44f';
+let mapCountryColor = '#FFBB8E';//'#FFAD6E';//'#FF9949';//'#FF8823';//'#FF7600';//'#fec44f';
 
 let zoom, g, mapsvg, markerScale;
 
@@ -563,7 +563,7 @@ $( document ).ready(function() {
     //var partnerData = getDataByIndicator('Partner/Organisation');
     var funderData = getDataByIndicator('Nationality');
 
-    var barchartPositionTitle = 'Deployments by Position',
+    var barchartPositionTitle = 'Deployments by Function',
         barchartOrgTitle = 'Deployments by Partner Organization',
         barchartFunderTitle = 'Deployments by Nationality';
 
@@ -714,7 +714,7 @@ $( document ).ready(function() {
 var partialDataYears = ["2018", "2021"];
 function noteOnYear () {
   if (partialDataYears.includes(yearFilter)) {
-    $('header h1 span').text("(Incomplete data)");
+    $('header h1 span').text("");
   } else {
     $('header h1 span').text("");
   }
